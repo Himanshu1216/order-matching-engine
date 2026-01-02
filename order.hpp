@@ -1,5 +1,7 @@
 #pragma once
 
+#include <list>
+
 enum class Side {
     BUY,
     SELL
@@ -11,4 +13,10 @@ struct Order {
     double price;
     int quantity;
     int timestamp;
+};
+
+struct OrderLocation {
+    Side side;
+    double price;
+    std::list<Order>::iterator it;
 };
